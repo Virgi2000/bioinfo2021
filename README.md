@@ -19,3 +19,4 @@ En este cursos se aprenderá sobre el uso de herramientas informáticas para el 
 - Abigail Galarza
 
 **Estudiantes**
+-Virginia del Carmen Rivadeneira Arias
