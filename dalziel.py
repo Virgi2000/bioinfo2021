@@ -4,12 +4,7 @@ asdfghjk
 
 # FUNCIÓN 2. Cáculo de la infecciones promedio por año, la desviación estándar y número de registros
 def compute_frequencies(population):
-    """ Count the genotypes.Returns a dictionary of genotypic frequencies."""
-    AA = population.count(("A", "A"))
-    Aa = population.count(("A", "a"))
-    aA = population.count(("a", "A"))
-    aa = population.count(("a", "a"))
-    return({"AA": AA, "aa": aa, "Aa": Aa, "aA": aA})
+   sdfghj
 
 # FUNCIÓN 3. Cálculo de la infecciones promedio por semana, la desviación estándar y número de registros
 
