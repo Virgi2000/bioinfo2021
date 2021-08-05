@@ -37,5 +37,31 @@ def avgcity(city, my_csv):
             avg_case = 100000*citypop[key][1]/citypop[key][0]
             # el resultado retorna el valor de "key" junto al "avg_case"
             return print(key, avg_case)
-            
+          
+# FUNCIÓN 2. Cáculo de la infecciones promedio por año, la desviación estándar y número de registros
+
+import pandas as pd
+import numpy as np
+
+def avgyearr(year, my_csv):
+    """
+    función para extraer el valor promedio de infecciones por año
+    """
+    
+    yearpop = {}
+    for line in my_csv:
+        myyear = line['year']
+        pop = float(line['pop'])
+        if line['cases'] != "NA":
+            case = float(line['cases'])
+            yearpop[myyear] = yearpop.get(myyear, [0,0,0])
+            yearpop[myyear][0] = yearpop[myyear][0] + pop
+            yearpop[myyear][1] = yearpop[myyear][1] + case
+            yearpop[myyear][2] = yearpop[myyear][2] + 1
+    for key in yearpop:
+        if key == year:
+            avg_year = 100000*yearpop[key][1]/yearpop[key][0]
+            return print(key, avg_year)
+
+
             
