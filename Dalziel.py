@@ -62,6 +62,32 @@ def avgyearr(year, my_csv):
         if key == year:
             avg_year = 100000*yearpop[key][1]/yearpop[key][0]
             return print(key, avg_year)
+        
+# FUNCIÓN 3. Cálculo de la infecciones promedio por semana, la desviación estándar y número de registros
+
+import pandas as pd
+
+def avgbiweeks(biweek, my_csv):
+    """
+    función para extraer el valor promedio de infecciones por semana
+    """
+    biweekpop = {}
+    for line in my_csv:
+        mycity = line['loc']
+        mybiweek= line['biweek']
+        pop = float(line['pop'])
+        if line['cases'] != "NA":
+            case = float(line['cases'])
+            biweekpop[mybiweek] = biweekpop.get(mybiweek, [0,0,0])
+            biweekpop[mybiweek][0] = biweekpop[mybiweek][0] + pop
+            biweekpop[mybiweek][1] = biweekpop[mybiweek][1] + case
+            biweekpop[mybiweek][2] = biweekpop[mybiweek][2] + 1
+    for key in biweekpop:
+        if key == biweek:
+            avg_case = 100000*biweekpop[key][2]/biweekpop[key][1]
+            return print(key, avg_case)
+        
+
 
 
             
